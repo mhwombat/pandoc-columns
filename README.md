@@ -12,7 +12,7 @@ HTML:
 
 ![](html.png)
 
-## Defining tables within your document.
+## Defining tables
 
 The Markdown that produced the above outputs is shown below.
 
@@ -49,9 +49,9 @@ The Markdown that produced the above outputs is shown below.
     :::::
     :::
 
-## Usage
+## Transforming to other formats
 
-You can format your Markdown document either using pandoc directly,
+You can process your Markdown document either using pandoc directly,
 or through Hakyll.
 
 ### With Pandoc
