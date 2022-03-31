@@ -1,6 +1,8 @@
+result
 dist
 dist-*
 cabal-dev
+*.~undo-tree~
 *.o
 *.hi
 *.hie
