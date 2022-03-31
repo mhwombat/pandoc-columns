@@ -2,52 +2,19 @@
 
 This filter supports the definition of columns in Markdown.
 
-## Usage
+## Sample output
 
-The "Example" section below explains how to use the Markdown
-syntax extensions provided by this filter.
-Then, you can format your document either using pandoc directly,
-or through Hakyll.
-
-### With Pandoc
-
-Use this filter by adding `--filter=pandoc-columns` to your pandoc command.
-For example:
-
-    pandoc --filter=pandoc-linear-table myfile.md --output=myfile.pdf
-
-### With Hakyll
-
-Use this filter as a transform in Hakyll.
-For example, you could modify `site.hs`, adding
-
-```
-import Text.Pandoc.Filters.Columns (transform)
-```
-
-and changing
-
-```
-pandocCompiler
-```
-
-to
-
-```
-pandocCompilerWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions transform
-```
-
-## Example
-
-Sample PDF output:
+PDF:
 
 ![](pdf.png)
 
-Sample HTML output:
+HTML:
 
 ![](html.png)
 
-The markdown that produced the above outputs:
+## Defining tables within your document.
+
+The Markdown that produced the above outputs is shown below.
 
     ::: columns
     ::::: column
@@ -81,3 +48,37 @@ The markdown that produced the above outputs:
     Viverra nam libero justo laoreet sit amet cursus.
     :::::
     :::
+
+## Usage
+
+You can format your Markdown document either using pandoc directly,
+or through Hakyll.
+
+### With Pandoc
+
+Use this filter by adding `--filter=pandoc-columns` to your pandoc command.
+For example:
+
+    pandoc --filter=pandoc-linear-table myfile.md --output=myfile.pdf
+
+### With Hakyll
+
+Use this filter as a transform in Hakyll.
+For example, you could modify `site.hs`, adding
+
+```
+import Text.Pandoc.Filters.Columns (transform)
+```
+
+and changing
+
+```
+pandocCompiler
+```
+
+to
+
+```
+pandocCompilerWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions transform
+```
+
