@@ -18,8 +18,8 @@ module Text.Pandoc.Filters.Columns
     formatColumns
   ) where
 
-import qualified Text.Pandoc      as P
-import           Text.Pandoc.Walk (walk)
+import Text.Pandoc      qualified as P
+import Text.Pandoc.Walk (walk)
 
 
 -- | A transformation that can be used with Hakyll.
@@ -32,7 +32,7 @@ formatColumns (P.Div attr@(_,["columns"],_) bs)
                     defaultTableHeader [body]
                     defaultTableFooter
   where body = blocksToTableBody bs
-        colSpecs = map (\_ -> defaultColSpec) bs
+        colSpecs = map (const defaultColSpec) bs
 formatColumns b = b
 
 blocksToTableBody :: [P.Block] -> P.TableBody

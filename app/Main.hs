@@ -11,7 +11,7 @@ See <https://github.com/mhwombat/pandoc-columns> for information
 on how to use this filter.
 -}
 import Text.Pandoc.Filters.Columns (formatColumns)
-import Text.Pandoc.JSON                (toJSONFilter)
+import Text.Pandoc.JSON            (toJSONFilter)
 
 main :: IO ()
 main = toJSONFilter formatColumns
