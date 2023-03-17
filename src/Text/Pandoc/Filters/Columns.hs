@@ -1,7 +1,7 @@
 {-|
 Module      : Columns
 Description : Pandoc filter to support columns in Markdown.
-Copyright   : (c) Amy de Buitléir, 2020-2022
+Copyright   : (c) 2020-2023 Amy de Buitléir
 License     : BSD--3
 Maintainer  : amy@nualeargais.ie
 Stability   : experimental

@@ -1,18 +1,21 @@
-cabal-version:      3.0
-name:               pandoc-columns
-version:            0.2.0.4
-description:        Pandoc filter to support columns in Markdown.
+cabal-version:   3.0
+name:            pandoc-columns
+version:         0.2.0.5
 synopsis:
-    Pandoc filter that provides a Markdown extension for columns.
-homepage:           https://github.com/mhwombat/pandoc-columns
-license:            BSD-3-Clause
-license-file:       LICENSE
-author:             Amy de Buitléir
-maintainer:         amy@nualeargais.ie
-copyright:          2020-2022 Amy de Buitléir
-category:           Text
-build-type:         Simple
-extra-doc-files:    CHANGELOG.md
+    A pandoc filter that provides a Markdown extension for columns.
+description:
+  For more information and a tutorial on how to use this package,
+  please see the README at <https://github.com/mhwombat/pandoc-columns#readme>.
+homepage:        https://github.com/mhwombat/pandoc-columns
+bug-reports:     https://github.com/mhwombat/pandoc-columns/issues
+license:         BSD-3-Clause
+license-file:    LICENSE
+author:          Amy de Buitléir
+maintainer:      amy@nualeargais.ie
+copyright:       (c) 2020-2023 Amy de Buitléir
+category:        Text
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
 
 source-repository head
   type:              git
@@ -34,9 +37,9 @@ library
     pandoc >= 2.19.2 && < 2.20
 
 executable pandoc-columns
-    import:           common-stuff
-    hs-source-dirs:   app
-    main-is:          Main.hs
-    build-depends:
-        pandoc-columns
+  import:           common-stuff
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  build-depends:
+    pandoc-columns
 
