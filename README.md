@@ -2,15 +2,41 @@
 
 This filter supports the definition of columns in Markdown.
 
-## Sample output
+|  PDF sample  |  HTML sample  |
+|:------------:|:-------------:|
+| ![](pdf.png) | ![](html.png) |
 
-PDF:
+## Installation
 
-![](pdf.png)
+This package is available from Hackage, or as a Nix flake.
 
-HTML:
+### From Hackage
 
-![](html.png)
+To install from Hackage, use [cabal install](https://cabal.readthedocs.io/en/stable/cabal-commands.html#cabal-install).
+The package name is `pandoc-columns`.
+
+### As a Nix flake
+
+Note: Flakes must be [enabled](https://nixos.wiki/wiki/Flakes) in your Nix or NixOS installation.
+
+One way to use the Nix flake is to create a `shell.nix` with pandoc and this package, like so:
+
+~~~
+with (import <nixpkgs> {});
+let
+  pandoc-include-plus = (builtins.getFlake git+https://codeberg.org/mhwombat/pandoc-include-plus).packages.${builtins.currentSystem}.default;
+in
+mkShell {
+  buildInputs = [
+    pandoc
+    pandoc-columns
+    # add any other software you want to use in the shell.
+  ];
+}
+~~~
+
+Enter the shell using `nix-shell`.
+Now you can use the commands below.
 
 ## Defining tables
 
