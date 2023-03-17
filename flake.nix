@@ -2,20 +2,24 @@
   description = "Pandoc Markdown filter that provides a Markdown extension for columns.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.11";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    haskell-flake.url = "github:srid/haskell-flake";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
   };
-  outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = nixpkgs.lib.systems.flakeExposed;
-      imports = [ inputs.haskell-flake.flakeModule ];
 
-      perSystem = { self', pkgs, ... }: {
-        haskellProjects.default = { };
-
-        # haskell-flake doesn't set the default package, but you can do it here.
-        packages.default = self'.packages.pandoc-logic-proof;
-      };
+  outputs = { self, nixpkgs }:
+    let
+      nameValuePair = name: value: { inherit name value; };
+      genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
+      allSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forAllSystems = f: genAttrs allSystems (system: f {
+        pkgs = import nixpkgs { inherit system; };
+      });
+    in
+    {
+      packages = forAllSystems ({ pkgs }: {
+        default = pkgs.haskellPackages.developPackage {
+          name = "pandoc-columns";
+          root = ./.;
+        };
+      });
     };
 }
