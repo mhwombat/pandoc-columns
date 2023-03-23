@@ -108,3 +108,6 @@ to
 pandocCompilerWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions transform
 ```
 
+# Related projects
+
+- [columns](https://github.com/dialoa/columns), a Pandoc filter written in Lua
