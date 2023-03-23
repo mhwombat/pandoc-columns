@@ -7,6 +7,6 @@ in
       pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
         [
           cabal-install
-          # list additional tools here
+#          texlive.combined.scheme-full
         ]);
   }
