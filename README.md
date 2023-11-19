@@ -35,18 +35,15 @@ mkShell {
 }
 ~~~
 
-Enter the shell using `nix-shell`.
-Now you can use the commands below.
+Enter the shell using `nix-shell`, and `pandoc-columns` will be available.
 
 ### In a Nix flake
-
-[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/mhwombat/pandoc-columns/badge)](https://flakehub.com/flake/mhwombat/pandoc-columns)
 
 Add pandoc-columns to your `flake.nix`:
 
 ```nix
 {
-  inputs.pandoc-columns.url = "https://flakehub.com/f/mhwombat/pandoc-columns/*.tar.gz";
+  inputs.pandoc-columns.url = "github:mhwombat/pandoc-columns";
 
   outputs = { self, pandoc-columns }: {
     # Use in your outputs
