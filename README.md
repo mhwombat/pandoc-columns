@@ -35,7 +35,7 @@ mkShell {
 }
 ~~~
 
-Enter the shell using `nix-shell`, and `pandoc-columns` will be available.
+Enter the shell using `nix-shell`, and this package will be available for use.
 
 ### In a Nix flake
 
