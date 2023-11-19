@@ -15,7 +15,7 @@ This package is available from Hackage, or as a Nix flake.
 To install from Hackage, use [cabal install](https://cabal.readthedocs.io/en/stable/cabal-commands.html#cabal-install).
 The package name is `pandoc-columns`.
 
-### As a Nix flake
+### In a Nix shell
 
 Note: Flakes must be [enabled](https://nixos.wiki/wiki/Flakes) in your Nix or NixOS installation.
 
@@ -37,6 +37,23 @@ mkShell {
 
 Enter the shell using `nix-shell`.
 Now you can use the commands below.
+
+### In a Nix flake
+
+[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/mhwombat/pandoc-columns/badge)](https://flakehub.com/flake/mhwombat/pandoc-columns)
+
+Add pandoc-columns to your `flake.nix`:
+
+```nix
+{
+  inputs.pandoc-columns.url = "https://flakehub.com/f/mhwombat/pandoc-columns/*.tar.gz";
+
+  outputs = { self, pandoc-columns }: {
+    # Use in your outputs
+  };
+}
+
+```
 
 ## Defining tables
 
